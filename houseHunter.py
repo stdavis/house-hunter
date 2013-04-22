@@ -1,12 +1,13 @@
 import requests
 import pickle
 import smtplib
-from time import sleep
 from string import Template
 from BeautifulSoup import BeautifulSoup
 import json
 import traceback
 import sys
+import datetime
+import time
 
 
 zipCodes = [
@@ -90,6 +91,7 @@ def searchPage(txt):
                         onmarket[props['mls']] = json.dumps(props)
                 else:
                     sendProperty(props, None)
+                    props['foundDate'] = time.time()
                     onmarket[props['mls']] = json.dumps(props)
                     print props['mls']
 
@@ -122,7 +124,8 @@ def checkForOffTheMarkets():
     for mls in onmarket.keys():
         if mls not in currentListings:
             prop = json.loads(onmarket[mls])
-            sendProperty(prop, 'Listing Off Market!!!')
+            timeOnMarket = datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])
+            sendProperty(prop, 'Listing Off Market in {0} days!!!'.format(timeOnMarket.days))
             del onmarket[mls]
 
 
@@ -173,4 +176,4 @@ while True:
             print 'Problem getting traceback object'
     finally:
         print 'sleeping for {0} minutes...'.format(sleepTime/60)
-        sleep(sleepTime)
+        time.sleep(sleepTime)
