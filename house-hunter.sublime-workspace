@@ -1,0 +1,1436 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dest",
+				"destroyRecursive"
+			],
+			[
+				"txt",
+				"txt_address"
+			],
+			[
+				"test",
+				"testWidget"
+			],
+			[
+				"_on",
+				"_onXHRFailure"
+			],
+			[
+				"toHave",
+				"toHaveBeenCalled"
+			],
+			[
+				"toHaveBe",
+				"toHaveBeenCalledWith"
+			],
+			[
+				"loadMap",
+				"loadMapWithoutParams"
+			],
+			[
+				"addres",
+				"addressStreet"
+			],
+			[
+				"testWid",
+				"testWidget2"
+			],
+			[
+				"coun",
+				"countyName"
+			],
+			[
+				"findcss",
+				"find_element_by_css_selector  (function)"
+			],
+			[
+				"newStat",
+				"newStationErrMsg"
+			],
+			[
+				"pub",
+				"publishedValue"
+			],
+			[
+				"invaliS",
+				"invalidStreamLength"
+			],
+			[
+				"inv",
+				"invalidStationMsg"
+			],
+			[
+				"exe",
+				"execute_script  (function)"
+			],
+			[
+				"wild",
+				"wildlifeData"
+			],
+			[
+				"downloadClick",
+				"downloadClickChannelName"
+			],
+			[
+				"obj",
+				"object function	new function as a property of an object"
+			],
+			[
+				"dojo",
+				"dojoAttachPoint=  (attribute)"
+			],
+			[
+				"onPre",
+				"onPreviewClick"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "houseHunter.py",
+			"settings":
+			{
+				"buffer_size": 4987,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/build_systems/agrc.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"open ",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"tra l",
+				"Traverse: Traverse from Last"
+			],
+			[
+				"tra",
+				"Traverse: Traverse from Project"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"gis",
+				"Gist: Create Public Gist"
+			],
+			[
+				"can",
+				"Build: Cancel"
+			],
+			[
+				"preview",
+				"Markdown Preview: preview in Browser"
+			],
+			[
+				"canc",
+				"Build: Cancel"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				"pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"edi",
+				"Project: Edit"
+			],
+			[
+				"edit",
+				"Project: Edit"
+			],
+			[
+				"clos",
+				"Project: Close"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"dis",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"grun",
+				"Grunt"
+			],
+			[
+				"run",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"curr",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"curren",
+				"SublimeREPL: Python - PDB current file"
+			],
+			[
+				"cur",
+				"SublimeREPL: Python - PDB current file"
+			],
+			[
+				"repl",
+				"SublimeREPL: Python"
+			],
+			[
+				"curre",
+				"SublimeREPL: Python - PDB current file"
+			],
+			[
+				"rep",
+				"SublimeREPL: Python"
+			],
+			[
+				"grunt",
+				"Grunt"
+			],
+			[
+				"pdb",
+				"SublimeREPL: Python - PDB current file"
+			],
+			[
+				"docu",
+				"Rope: Show Documentation"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"gru",
+				"Grunt"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"tabs",
+				"View: Toggle Tabs"
+			],
+			[
+				"fold",
+				"Code Folding: Unfold All"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"list ",
+				"Package Control: List Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: console.info call for functions"
+			],
+			[
+				"code fo",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"new fil",
+				"File: New File Relative to Current View"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"show",
+				"SFTP: Show Panel"
+			],
+			[
+				"show ",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"lint",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 332.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/scottdavis/Dropbox/scripts/house-hunter/house-hunter.sublime-project",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/EmbeddedMapLoader.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/BUILD_STEPS.md",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/EmbeddedMapLoader.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/embed-demo.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/ui-tests/tests/basetest.py",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/templates/App.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/build.sh",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/ChangeLog.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/resources/App.css",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/profiles/app.profile.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/run.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/map/BaseMapSelector.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/tests/spec/SpecApp.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/map/_BaseMapSelector.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/App.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/ui-tests/tests/test_init_params.py",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/ui-tests.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/main.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/MagicZoom.js",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/.jshintrc",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/resources/ZoomToCoord.css",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/templates/FindAddress.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/templates/FindRouteMilepost.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/ui-tests/testRunner.py",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/FindRouteMilepost.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/templates/ZoomToCoord.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/ZoomToCoord.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/_SpecRunner.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/FindAddress.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/FindAddress.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/resources/FindAddress.css",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/themes/standard/locate/FindRouteMilepost.css",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/dojo/_base/lang.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/embed-demo.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/ui-tests/tests/test_map_click.py",
+		"/Users/scottdavis/Documents/share/server-20130318.112246-1280-0.0.xml",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/modules/tests/spec/SpecSGIDQuery.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/templates/MagicZoom.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/resources/MagicZoom.css",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/templates/MagicZoom.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/MagicZoom.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/modules/SGIDQuery.js",
+		"/Users/scottdavis/Documents/Projects/working/scripts/edit_services.py",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/templates/FindAddress.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/sftp-config-alt.json",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/sftp-config.json",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/ui-tests/tests/test_zoom_to_coords.py",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/deqspills.sublime-project",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/ui-tests.html",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/GruntFile.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/FindGeneric.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/sftp-config-alt.json",
+		"/Users/scottdavis/Dropbox/apps/sublime/Packages/User/snippets/selenium/newseleniumtest.sublime-snippet",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/tests/SpecApp.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/sftp-config.json",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/app.profile.js",
+		"/Users/scottdavis/Documents/Projects/SolarMapWidget/src/dojox/calendar/StoreMixin.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/dojox/calendar/StoreMixin.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/dist/build-report.txt",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/dojox/package.json",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/agrc/widgets/locate/TRSsearch.js",
+		"/Users/scottdavis/Documents/Projects/JavaScriptProjectBoilerPlate/profiles/app.profile.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/dojo/selector/_loader.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/src/app/AGRCMap.js",
+		"/Users/scottdavis/Documents/Projects/DEQSpills/package.json",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/VerifyMap.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/main.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecStation.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/_SpecRunner.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/jasmineTestBootstrap.js",
+		"/Users/scottdavis/Downloads/jasmine-standalone-1.2.0/SpecRunner.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/build.sh",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/run.js",
+		"/Users/scottdavis/Downloads/code-samples/ftests3.py",
+		"/Users/scottdavis/Downloads/code-samples/ftests3_remote.py",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/ui-tests/submitReport.py",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/dist/ChangeLog.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/ChangeLog.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/ijit/modules/ErrorLogger.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/NewCollectionEvent.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/Station.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/StartEndGeoDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/IDGeoDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/StartDistDirGeoDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/PointDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/Location.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/_GeoDefMixin.js",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecNewCollectionEvent.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecLocation.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecStartDistDirGeoDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/templates/Location.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/templates/Station.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/templates/PointDef.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/templates/NewCollectionEvent.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/Spec_GeoDefMixin.js",
+		"/Users/scottdavis/Downloads/code-samples/ftests2.py",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecStartEndGeoDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecIDGeoDef.js",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/ui-tests/startServer.py",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/ui-tests/NewStation",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/tests/spec/SpecPointDef.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/.jshintrc",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/dojo/rpc/JsonService.js",
+		"/Users/scottdavis/Downloads/code-samples/ftests1.py",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/scottdavis/Library/Application Support/Sublime Text 2/Packages/User/SFTP.errors.log",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/dist/sftp-config.json",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/dist/sftp-config-alt.json",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/resources/Header.css",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/templates/Header.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/resources/Station.css",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/resources/Location.css",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/agrc/modules/GUID.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/agrc/modules/HelperFunctions.js",
+		"/Users/scottdavis/Dropbox/apps/sublime/Packages/User/snippets/objfun.sublime-snippet",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app/location/templates/IDGeoDef.html",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/leaflet/leaflet-src.js",
+		"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/dist/app/location/_GeoDefMixin.js",
+		"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/build/sftp-config-alt.json",
+		"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/build/sftp-config.json",
+		"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/trunk/roadkill/gpsController.js",
+		"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/trunk/js/core.js",
+		"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/trunk/index.html"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/scottdavis/Documents/Projects/DEQSpills/src/",
+			"/Users/scottdavis/Documents/Projects/DEQSpills/src/app",
+			"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/src/app",
+			"C:\\inetpub\\wwwroot\\RoadkillReporter_Mobile\\trunk\\src\\app",
+			"C:\\inetpub\\wwwroot\\RoadkillReporter_Mobile\\trunk",
+			"<open folders>,C:\\inetpub\\wwwroot\\RoadkillReporter_Mobile\\trunk",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"clearall",
+			"bms",
+			"value",
+			"findWidget",
+			"px",
+			"5px",
+			"onFind",
+			"errorMsg",
+			"error",
+			"trim",
+			".trim()",
+			"location",
+			"noApiKeyErrorTxt",
+			"new App",
+			"domConstruct.create('div', {}, win.body())",
+			"new App",
+			"assertEqual",
+			"self",
+			"this.btn_geo",
+			"def",
+			"result",
+			"AGRC",
+			"key",
+			"findAddressWidget",
+			"null",
+			"description",
+			"missingRouteMilepostTxt",
+			"zoomToAddress",
+			"addressZone",
+			"addressStreet",
+			"zone",
+			"street",
+			"geocodeAddress",
+			"addressZone",
+			"zone",
+			"add",
+			"zoomToAddress",
+			"street",
+			"not.toBeDefined();",
+			"widget",
+			"zoomToAddress",
+			"5000",
+			"this.map",
+			"console",
+			"mix",
+			"this",
+			"coords",
+			")",
+			"427704.54999999981",
+			"mv",
+			"typeName",
+			"citytown",
+			"name",
+			"zoomToCity",
+			"zoomToCounty",
+			"countyName",
+			"counties",
+			"zoomToCounty",
+			"APPNAME",
+			"AGRCMap.star",
+			"AGRCMap =",
+			"KANEd",
+			"xit",
+			"data",
+			"onlyLayerName",
+			"this",
+			"testWidget",
+			"testWidget2",
+			"dojoattachpoint",
+			"AGRC",
+			"SuiteName",
+			"console",
+			"console.log('result",
+			"LOADMAPWITHOUTPARAMS",
+			"LOAD",
+			"loadMapWithoutParams",
+			"LoadMapWithoutParams",
+			"FindAddress",
+			"-n",
+			"352",
+			"ERROR",
+			"/",
+			"projectUrl",
+			"/",
+			"../",
+			"AAGRpp",
+			"AGRCMap",
+			"ERROR",
+			"townships.js",
+			"ERROR",
+			"3.2",
+			"testDiv",
+			"proj4js-compressed",
+			"this",
+			"error",
+			"var",
+			"webdriver",
+			"ActionChains",
+			"self",
+			"GUID",
+			"getpoin",
+			"h3",
+			"x: ",
+			"vMap",
+			"Math",
+			"station",
+			"onError",
+			"data",
+			"var",
+			"onTextBoxFocusOut",
+			"4496470",
+			"strong",
+			"test1",
+			"option",
+			"button",
+			"div",
+			"active",
+			"processposition",
+			"pauseupdate",
+			"processPosition",
+			"pauseUpdate",
+			"setUTMPoint",
+			"-2",
+			"please",
+			"simplifyServiceUrl",
+			"amount",
+			"log(null",
+			"attributes"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"previewClickChannelName",
+			"results-pane-inner",
+			"result-group",
+			"results-pane-inner",
+			"'",
+			"",
+			"plpco",
+			"vote"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "houseHunter.py",
+					"settings":
+					{
+						"buffer_size": 4987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1076,
+								1076
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"incomplete_sync": null,
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"W293",
+								"E501",
+								"E401",
+								"W292"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
+							"sublimelinter": true,
+							"sublimelinter_delay": 3.0,
+							"sublimelinter_disable":
+							[
+								"css"
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_mark_style": "outline",
+							"sublimelinter_notes": true,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": true,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"synced": false,
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 444.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 470.0
+	},
+	"output.git":
+	{
+		"height": 102.0
+	},
+	"output.sftp":
+	{
+		"height": 175.0
+	},
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"hous",
+				"houseHunter.py"
+			],
+			[
+				"emb",
+				"dist/EmbeddedMapLoader.js"
+			],
+			[
+				"run",
+				"src/app/run.js"
+			],
+			[
+				"buils",
+				"BUILD_STEPS.md"
+			],
+			[
+				"buil",
+				"build.sh"
+			],
+			[
+				"appc",
+				"src/app/resources/App.css"
+			],
+			[
+				"bas",
+				"ui-tests/tests/basetest.py"
+			],
+			[
+				"embe",
+				"src/embed-demo.html"
+			],
+			[
+				"profil",
+				"profiles/app.profile.js"
+			],
+			[
+				"embedd",
+				"src/EmbeddedMapLoader.js"
+			],
+			[
+				"chan",
+				"src/ChangeLog.html"
+			],
+			[
+				"uit",
+				"src/ui-tests.html"
+			],
+			[
+				"test_ini",
+				"ui-tests/tests/test_init_params.py"
+			],
+			[
+				"base",
+				"ui-tests/tests/basetest.py"
+			],
+			[
+				"main",
+				"src/app/main.js"
+			],
+			[
+				"magic",
+				"src/agrc/widgets/locate/MagicZoom.js"
+			],
+			[
+				"_basem",
+				"src/agrc/widgets/map/_BaseMapSelector.js"
+			],
+			[
+				"spec",
+				"src/app/tests/spec/SpecApp.js"
+			],
+			[
+				"basemapsel",
+				"src/agrc/widgets/map/BaseMapSelector.js"
+			],
+			[
+				"appht",
+				"src/app/templates/App.html"
+			],
+			[
+				"app",
+				"src/app/App.js"
+			],
+			[
+				"js",
+				".jshintrc"
+			],
+			[
+				"specap",
+				"src/app/tests/spec/SpecApp.js"
+			],
+			[
+				"embed",
+				"src/EmbeddedMapLoader.js"
+			],
+			[
+				"findrou",
+				"src/agrc/widgets/locate/FindRouteMilepost.js"
+			],
+			[
+				"init",
+				"ui-tests/tests/test_init_params.py"
+			],
+			[
+				"test",
+				"ui-tests/testRunner.py"
+			],
+			[
+				"chang",
+				"src/ChangeLog.html"
+			],
+			[
+				"findrouht",
+				"src/agrc/widgets/locate/templates/FindRouteMilepost.html"
+			],
+			[
+				"findadht",
+				"src/app/templates/FindAddress.html"
+			],
+			[
+				"zoom",
+				"src/app/ZoomToCoord.js"
+			],
+			[
+				"finda",
+				"src/agrc/widgets/locate/FindAddress.js"
+			],
+			[
+				"findad",
+				"src/app/FindAddress.js"
+			],
+			[
+				"find",
+				"src/agrc/widgets/locate/FindAddress.js"
+			],
+			[
+				"findroutc",
+				"src/agrc/themes/standard/locate/FindRouteMilepost.css"
+			],
+			[
+				"findroutht",
+				"src/agrc/widgets/locate/templates/FindRouteMilepost.html"
+			],
+			[
+				"findaddcs",
+				"src/app/resources/FindAddress.css"
+			],
+			[
+				"findadd",
+				"src/agrc/widgets/locate/FindAddress.js"
+			],
+			[
+				"map",
+				"ui-tests/tests/test_map_click.py"
+			],
+			[
+				"ui",
+				"src/ui-tests.html"
+			],
+			[
+				"test_map",
+				"ui-tests/tests/test_map_click.py"
+			],
+			[
+				"findro",
+				"src/agrc/widgets/locate/FindRouteMilepost.js"
+			],
+			[
+				"jsh",
+				".jshintrc"
+			],
+			[
+				"ap",
+				"src/app/App.js"
+			],
+			[
+				"embeddem",
+				"src/EmbeddedMapLoader.js"
+			],
+			[
+				"test_",
+				"ui-tests/tests/test_init_params.py"
+			],
+			[
+				"specsg",
+				"src/agrc/modules/tests/spec/SpecSGIDQuery.js"
+			],
+			[
+				"magi",
+				"src/agrc/widgets/locate/MagicZoom.js"
+			],
+			[
+				"apph",
+				"src/app/templates/App.html"
+			],
+			[
+				"em",
+				"src/EmbeddedMapLoader.js"
+			],
+			[
+				"speca",
+				"src/app/tests/spec/SpecApp.js"
+			],
+			[
+				"sgid",
+				"src/agrc/modules/SGIDQuery.js"
+			],
+			[
+				"ini",
+				"ui-tests/tests/test_init_params.py"
+			],
+			[
+				"findcss",
+				"src/app/resources/FindAddress.css"
+			],
+			[
+				"findaddh",
+				"src/agrc/widgets/locate/templates/FindAddress.html"
+			],
+			[
+				"testru",
+				"ui-tests/testRunner.py"
+			],
+			[
+				"test_in",
+				"ui-tests/tests/test_init_params.py"
+			],
+			[
+				"test_zoo",
+				"ui-tests/tests/test_zoom_to_coords.py"
+			],
+			[
+				"gru",
+				"GruntFile.js"
+			],
+			[
+				"zooht",
+				"src/app/templates/ZoomToCoord.html"
+			],
+			[
+				"zoo",
+				"src/app/ZoomToCoord.js"
+			],
+			[
+				"ba",
+				"ui-tests/tests/basetest.py"
+			],
+			[
+				"appj",
+				"src/app/App.js"
+			],
+			[
+				"jasminete",
+				"src/app/tests/jasmineTestBootstrap.js"
+			],
+			[
+				"jasminetest",
+				"src/app/tests/jasmineTestBootstrap.js"
+			],
+			[
+				"spe",
+				"_SpecRunner.html"
+			],
+			[
+				"sub",
+				"ui-tests/submitReport.py"
+			],
+			[
+				"specsa",
+				"src/app/tests/spec/SpecStation.js"
+			],
+			[
+				"newco",
+				"src/app/NewCollectionEvent.js"
+			],
+			[
+				"statio",
+				"src/app/location/Station.js"
+			],
+			[
+				"starend",
+				"src/app/location/StartEndGeoDef.js"
+			],
+			[
+				"idgeo",
+				"src/app/location/IDGeoDef.js"
+			],
+			[
+				"startdi",
+				"src/app/location/StartDistDirGeoDef.js"
+			],
+			[
+				"point",
+				"src/app/location/PointDef.js"
+			],
+			[
+				"su",
+				"ui-tests/submitReport.py"
+			],
+			[
+				"errorlo",
+				"src/ijit/modules/ErrorLogger.js"
+			],
+			[
+				"mai",
+				"src/app/main.js"
+			],
+			[
+				"specstardi",
+				"src/app/tests/spec/SpecStartDistDirGeoDef.js"
+			],
+			[
+				"specloca",
+				"src/app/tests/spec/SpecLocation.js"
+			],
+			[
+				"locht",
+				"src/app/templates/Location.html"
+			],
+			[
+				"locat",
+				"src/app/Location.js"
+			],
+			[
+				"stationht",
+				"src/app/location/templates/Station.html"
+			],
+			[
+				"locaht",
+				"src/app/templates/Location.html"
+			],
+			[
+				"new",
+				"src/app/NewCollectionEvent.js"
+			],
+			[
+				"specnew",
+				"src/app/tests/spec/SpecNewCollectionEvent.js"
+			],
+			[
+				"pointht",
+				"src/app/location/templates/PointDef.html"
+			],
+			[
+				"newcoht",
+				"src/app/templates/NewCollectionEvent.html"
+			],
+			[
+				"rep",
+				"*REPL* [python]"
+			],
+			[
+				"startend",
+				"src/app/location/StartEndGeoDef.js"
+			],
+			[
+				"startdis",
+				"src/app/location/StartDistDirGeoDef.js"
+			],
+			[
+				"station",
+				"src/app/location/Station.js"
+			],
+			[
+				"specid",
+				"src/app/tests/spec/SpecIDGeoDef.js"
+			],
+			[
+				"geodefmi",
+				"src/app/location/_GeoDefMixin.js"
+			],
+			[
+				"idgeojs",
+				"src/app/location/IDGeoDef.js"
+			],
+			[
+				"specpoint",
+				"src/app/tests/spec/SpecPointDef.js"
+			],
+			[
+				"specstar",
+				"src/app/tests/spec/SpecStartEndGeoDef.js"
+			],
+			[
+				"jshin",
+				".jshintrc"
+			],
+			[
+				"startee",
+				"src/app/location/StartEndGeoDef.js"
+			],
+			[
+				"spec_geo",
+				"src/app/tests/spec/Spec_GeoDefMixin.js"
+			],
+			[
+				"geodefmix",
+				"src/app/location/_GeoDefMixin.js"
+			],
+			[
+				"verify",
+				"src/app/location/VerifyMap.js"
+			],
+			[
+				"speclo",
+				"src/app/tests/spec/SpecLocation.js"
+			],
+			[
+				"loca",
+				"src/app/Location.js"
+			],
+			[
+				"headh",
+				"src/app/templates/Header.html"
+			],
+			[
+				"locacs",
+				"src/app/resources/Location.css"
+			],
+			[
+				"very",
+				"src/app/location/VerifyMap.js"
+			],
+			[
+				"specloc",
+				"src/app/tests/spec/SpecLocation.js"
+			],
+			[
+				"locaionht",
+				"src/app/templates/Location.html"
+			],
+			[
+				"guid",
+				"src/agrc/modules/GUID.js"
+			],
+			[
+				"newjs",
+				"src/app/NewCollectionEvent.js"
+			],
+			[
+				"specpoin",
+				"src/app/tests/spec/SpecPointDef.js"
+			],
+			[
+				"pointde",
+				"src/app/location/PointDef.js"
+			],
+			[
+				"help",
+				"src/agrc/modules/HelperFunctions.js"
+			],
+			[
+				"stationc",
+				"src/app/location/resources/Station.css"
+			],
+			[
+				"newht",
+				"src/app/templates/NewCollectionEvent.html"
+			],
+			[
+				"stationcs",
+				"src/app/location/resources/Station.css"
+			],
+			[
+				"jshintr",
+				".jshintrc"
+			],
+			[
+				"specsta",
+				"src/app/tests/spec/SpecStation.js"
+			],
+			[
+				"station.j",
+				"src/app/location/Station.js"
+			],
+			[
+				"_geo",
+				"src/app/location/_GeoDefMixin.js"
+			],
+			[
+				"idgeodeh",
+				"src/app/location/templates/IDGeoDef.html"
+			],
+			[
+				"geodef",
+				"src/app/location/IDGeoDef.js"
+			],
+			[
+				"trtoolbox.html",
+				"trunk/content/raster/templates/Toolbox.html"
+			],
+			[
+				"trtool",
+				"trunk/content/raster/Toolbox.js"
+			],
+			[
+				"productresult.ht",
+				"trunk/content/raster/templates/ProductResult.html"
+			],
+			[
+				"trunkgroup",
+				"trunk/content/raster/css/ResultGroup.css"
+			],
+			[
+				"agrcfindadd",
+				"trunk/content/agrc/widgets/locate/FindAddress.js"
+			],
+			[
+				"index",
+				"trunk/index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"deq",
+				"/Users/scottdavis/Documents/Projects/DEQSpills/deqspills.sublime-project"
+			],
+			[
+				"act",
+				"/Users/scottdavis/Documents/Projects/ACTSStatisticsViewer/actsstatisticsviewer.sublime-project"
+			],
+			[
+				"wild",
+				"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/wildlifedataentry.sublime-project"
+			],
+			[
+				"bro",
+				"/Users/scottdavis/Documents/Projects/Broadband/broadband.sublime-project"
+			],
+			[
+				"wil",
+				"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/wildlifedataentry.sublime-project"
+			],
+			[
+				"agrc-",
+				"/Users/scottdavis/Documents/Projects/agrc/agrc-python.sublime-project"
+			],
+			[
+				"dat",
+				"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/wildlifedataentry.sublime-project"
+			],
+			[
+				"data",
+				"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/wildlifedataentry.sublime-project"
+			],
+			[
+				"roa",
+				"/Users/scottdavis/Documents/Projects/RoadkillReporter_Desktop/roadkillreporterdesktop.sublime-project"
+			],
+			[
+				"dojow",
+				"/Users/scottdavis/Dropbox/apps/grunt/.grunt/dojowidget/grunt-init-dojowidget.sublime-project"
+			],
+			[
+				"sol",
+				"/Users/scottdavis/Documents/Projects/SolarMapWidget/solarmapwidget.sublime-project"
+			],
+			[
+				"de",
+				"/Users/scottdavis/Documents/Projects/Broadband/dist/deqspills.sublime-project"
+			],
+			[
+				"boil",
+				"/Users/scottdavis/Documents/Projects/AGRCJavaScriptProjectBoilerPlate/boilerplate.sublime-project"
+			],
+			[
+				"boi",
+				"/Users/scottdavis/Documents/Projects/JavaScriptProjectBoilerPlate/boilerplate.sublime-project"
+			],
+			[
+				"ib",
+				"/Users/scottdavis/Documents/Projects/IBIS/ibis.sublime-project"
+			],
+			[
+				"ibi",
+				"/Users/scottdavis/Documents/Projects/IBIS/ibis.sublime-project"
+			],
+			[
+				"",
+				"/Users/scottdavis/Documents/Projects/Wildlife/dataentry/wildlifedataentry.sublime-project"
+			],
+			[
+				"ro",
+				"/Users/scottdavis/Documents/Projects/RoadkillReporter_Mobile/roadkillmobile.sublime-project"
+			],
+			[
+				"ra",
+				"/Users/scottdavis/Documents/Projects/Raster/raster.sublime-project"
+			],
+			[
+				"ras",
+				"/Users/scottdavis/Documents/Projects/Raster/raster.sublime-project"
+			],
+			[
+				"agr",
+				"/C/inetpub/wwwroot/AGRCJavaScriptProjectBoilerPlate/agrcjavascriptprojectboilerplate.sublime-project"
+			],
+			[
+				"desk",
+				"/C/inetpub/wwwroot/RoadkillReporter_Desktop/roadkillreporterdesktop.sublime-project"
+			],
+			[
+				"sur",
+				"/C/inetpub/wwwroot/SurfaceWaterQuality/surfacewaterquality.sublime-project"
+			],
+			[
+				"raster",
+				"/C/inetpub/wwwroot/Raster/raster.sublime-project"
+			],
+			[
+				"deskto",
+				"/C/inetpub/wwwroot/RoadkillReporter_Desktop/roadkillreporterdesktop.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 286.0,
+	"status_bar_visible": true
+}
