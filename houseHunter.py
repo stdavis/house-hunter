@@ -19,8 +19,11 @@ zipCodes = [
     '84109',
     '84107'
 ]
+maxListPrice = '450000'
+minSqFt = '2500'
+minLotSize = '.20'
 
-baseURL = r'http://www.utahrealestate.com/search/public.search?geocoded={0}&htype=zip&state=ut&type=1&listprice2=450000&proptype=1&tot_sqf1=2500&dim_acres1=.20&view=list&page={1}'
+baseURL = r'http://www.utahrealestate.com/search/public.search?geocoded={0}&htype=zip&state=ut&type=1&listprice2={2}&proptype=1&tot_sqf1={3}&dim_acres1={4}&view=list&page={1}'
 emailBody = Template("""
 ${stats}
 <br>
@@ -149,7 +152,7 @@ def search():
     print 'searching...'
     pg = 1
     while not no_more:
-        url = baseURL.format(zip, pg)
+        url = baseURL.format(zip, pg, maxListPrice, minSqFt, minLotSize)
         r = session.get(url)
 
         searchPage(r.text)
