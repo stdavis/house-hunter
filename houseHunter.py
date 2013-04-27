@@ -56,6 +56,8 @@ no_more = False
 
 sleepTime = 900
 
+statusEmailTimes = 4
+
 session = requests.Session()
 session.get(baseURL)
 
@@ -97,16 +99,19 @@ def searchPage(txt):
 
 
 def sendProperty(props, additionalText):
-    add = email
     if additionalText is not None:
         body = '<h3>{0}</h3>'.format(additionalText) + emailBody.substitute(props)
     else:
         body = emailBody.substitute(props)
 
+    sendEmail('{0} | {1}'.format(props['price'], props['add']), body)
+
+
+def sendEmail(sub, body):
     headers = [
-        "from: " + add,
-        "subject: " + '{0} | {1}'.format(props['price'], props['add']),
-        "to: " + add,
+        "from: " + email,
+        "subject: " + sub,
+        "to: " + email,
         "mime-version: 1.0",
         "content-type: text/html"
     ]
@@ -114,8 +119,8 @@ def sendProperty(props, additionalText):
 
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
-    server.login(add, password)
-    server.sendmail(add, add, headers + '\r\n\r\n' + body)
+    server.login(email, password)
+    server.sendmail(email, email, headers + '\r\n\r\n' + body)
 
 
 def checkForOffTheMarkets():
@@ -159,7 +164,10 @@ def search():
     output.close()
 
 
+i = 0
 while True:
+    i = i + 1
+    print i
     try:
         search()
     except:
@@ -175,5 +183,8 @@ while True:
         except:
             print 'Problem getting traceback object'
     finally:
+        if i == 4:
+            sendEmail('houseHunter.py is still running', 'Let not your heart be troubled. I\'m working hard to find you a home.')
+            i = 0
         print 'sleeping for {0} minutes...'.format(sleepTime/60)
         time.sleep(sleepTime)
