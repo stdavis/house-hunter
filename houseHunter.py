@@ -133,10 +133,10 @@ def checkForOffTheMarkets():
         if mls not in currentListings:
             prop = json.loads(onmarket[mls])
             try:
-                timeOnMarket = datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])
+                timeOnMarket = (datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])).days
             except:
                 timeOnMarket = '???'
-            sendProperty(prop, 'Listing Off Market in {0} days!!!'.format(timeOnMarket.days))
+            sendProperty(prop, 'Listing Off Market in {0} days!!!'.format(timeOnMarket))
             del onmarket[mls]
 
 
