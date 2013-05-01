@@ -20,7 +20,7 @@ zipCodes = [
     '84107'
 ]
 maxListPrice = '450000'
-minSqFt = '2500'
+minSqFt = '2000'
 minLotSize = '.20'
 
 baseURL = r'http://www.utahrealestate.com/search/public.search?geocoded={0}&htype=zip&state=ut&type=1&listprice2={2}&proptype=1&tot_sqf1={3}&dim_acres1={4}&view=list&page={1}'
@@ -132,7 +132,10 @@ def checkForOffTheMarkets():
     for mls in onmarket.keys():
         if mls not in currentListings:
             prop = json.loads(onmarket[mls])
-            timeOnMarket = datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])
+            try:
+                timeOnMarket = datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])
+            except:
+                timeOnMarket = '???'
             sendProperty(prop, 'Listing Off Market in {0} days!!!'.format(timeOnMarket.days))
             del onmarket[mls]
 
