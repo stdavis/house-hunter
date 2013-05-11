@@ -98,6 +98,7 @@ class getListingsFromHTML(unittest.TestCase):
         self.assertEqual(listing.ppsqft, 69)
         self.assertEqual(listing.acres, 0.53)
         self.assertEqual(listing.stats, '2 Bedrooms | 2.00 Bathrooms | 2573 sq. ft.')
+        self.assertEqual(listing.priceStr, '$180,000')
 
     def test_streetAddNotAvailable(self):
         listing = self.listings[1]

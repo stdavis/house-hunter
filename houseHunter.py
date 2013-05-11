@@ -20,7 +20,7 @@ class Hunter():
         <a href='https://maps.google.com/?q=${address}, ${city}, UT ${zip}'>${address}, ${city}, UT ${zip}</a>
         ${stats}
         <br>
-        ${price} | ${ppsqft} per square foot
+        ${priceStr} | ${ppsqft} per square foot
         <br>
         <a href='http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}'>
             <img src='${photoUrl}'>
@@ -118,7 +118,8 @@ class Hunter():
         for listTable in soup.findAll('table', {'class': 'public-detail-quickview'}):
             list = Listing()
             list.mls = listTable.find('p', {'class': 'public-detail-overview-b'}).contents[2].string.strip()
-            list.price = int(listTable.h2.span.string[1:].replace(',', ''))
+            list.priceStr = listTable.h2.span.string
+            list.price = int(list.priceStr[1:].replace(',', ''))
             list.photoUrl = listTable.img['src']
             if listTable.h2.i:
                 list.address = listTable.h2.i.string.replace('  ', ' ')
@@ -145,7 +146,7 @@ class Hunter():
         else:
             body = '<h3>{}</h3>'.format(additionalText) + self.emailBody.substitute(listing.__dict__)
 
-        subject = '{} | {} | {}, {}'.format(listing.price, listing.sqft, listing.address, listing.city)
+        subject = '{} | {} sf | {}, {} {}'.format(listing.priceStr, listing.sqft, listing.address, listing.city, listing.zip)
         self.sendEmail(subject, body)
 
     def sendEmail(self, sub, body):
@@ -167,6 +168,7 @@ class Hunter():
 class Listing():
     mls = ''
     price = 0
+    priceStr = ''
     photoUrl = ''
     address = ''
     city = ''
