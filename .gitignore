@@ -1,5 +1,6 @@
 *.sublime-workspace
 onMarket.pkl
+SavedListings.pkl
 .DS_Store
 *.py[cod]
 
