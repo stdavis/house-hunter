@@ -10,7 +10,6 @@ import time
 
 class Hunter():
     sleepTime = 900
-    maxSearches = float("+inf")
     pickleFileName = 'SavedListings.pkl'
     currentListings = None
     listingsFound = None
@@ -51,7 +50,7 @@ class Hunter():
     def startSearch(self):
         statusSearches = 0
         totalSearches = 0
-        while totalSearches <= self.maxSearches:
+        while True:
             totalSearches = totalSearches + 1
             statusSearches = statusSearches + 1
             try:
