@@ -3,10 +3,8 @@ import pickle
 import smtplib
 from string import Template
 from BeautifulSoup import BeautifulSoup
-# import json
-# import traceback
 import sys, os
-# import datetime
+import datetime
 import time
 
 
@@ -15,6 +13,7 @@ class Hunter():
     maxSearches = float("+inf")
     pickleFileName = 'SavedListings.pkl'
     currentListings = None
+    listingsFound = None
     utahrealestateUrl = r'http://www.utahrealestate.com/search/public.search?accuracy=5&geocoded={0}&box=%257B%2522north%2522%253A40.71271490000001%252C%2522south%2522%253A40.51886100000001%252C%2522east%2522%253A-111.520936%252C%2522west%2522%253A-111.871398%257D&htype=zip&lat=40.6210656&lng=-111.81713739999998&geolocation=Salt+Lake+City%2C+UT+{0}&type=1&listprice1=&listprice2={1}&proptype=1&state=ut&tot_bed1=&tot_bath1=&tot_sqf1={2}&dim_acres1={3}&yearblt1=&cap_garage1=&style=&o_style=4&opens=&accessibility=&o_accessibility=32&page={4}'
     emailBody = Template("""
         <a href='https://maps.google.com/?q=${address}, ${city}, UT ${zip}'>${address}, ${city}, UT ${zip}</a>
@@ -70,9 +69,10 @@ class Hunter():
 
     def search(self):
         self.currentListings = self.getSavedListings()
+        self.listingsFound = []
 
         for zip in self.zipCodes:
-            print '\n{}\n'.format(zip)
+            print zip
 
             # this is required to make their site return the correct data
             s = requests.Session()
@@ -88,6 +88,7 @@ class Hunter():
                     break
 
                 for l in listings:
+                    self.listingsFound.append(l.mls)
                     if l.mls in self.currentListings.keys():
                         # check for price change
                         current = self.currentListings[l.mls]
@@ -101,6 +102,8 @@ class Hunter():
                         print 'New property found: {}'.format(l.mls)
                 page = page + 1
             s.close()
+
+        self.checkForOffTheMarkets()
 
         with open(self.pickleFileName, 'w') as file:
             pickle.dump(self.currentListings, file)
@@ -163,6 +166,17 @@ class Hunter():
         server.starttls()
         server.login(self.email, self.password)
         server.sendmail(email, email, headers + '\r\n\r\n' + body)
+
+    def checkForOffTheMarkets(self):
+        for mls in self.currentListings.keys():
+            if mls not in self.listingsFound:
+                listing = self.currentListings[mls]
+                try:
+                    timeOnMarket = (datetime.datetime.now() - datetime.datetime.fromtimestamp(listing.foundDate)).days
+                except:
+                    timeOnMarket = '???'
+                self.sendProperty(listing, 'Listing Off Market in {} days!!!'.format(timeOnMarket))
+                del self.currentListings[mls]
 
 
 class Listing():
