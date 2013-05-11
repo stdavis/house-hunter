@@ -3,23 +3,51 @@ import pickle
 import smtplib
 from string import Template
 from BeautifulSoup import BeautifulSoup
-import json
-import traceback
-import sys
-import datetime
+# import json
+# import traceback
+import sys, os
+# import datetime
 import time
 
 
 class Hunter():
     sleepTime = 900
     maxSearches = float("+inf")
+    pickleFileName = 'SavedListings.pkl'
+    currentListings = None
+    utahrealestateUrl = r'http://www.utahrealestate.com/search/public.search?accuracy=5&geocoded={0}&box=%257B%2522north%2522%253A40.71271490000001%252C%2522south%2522%253A40.51886100000001%252C%2522east%2522%253A-111.520936%252C%2522west%2522%253A-111.871398%257D&htype=zip&lat=40.6210656&lng=-111.81713739999998&geolocation=Salt+Lake+City%2C+UT+{0}&type=1&listprice1=&listprice2={1}&proptype=1&state=ut&tot_bed1=&tot_bath1=&tot_sqf1={2}&dim_acres1={3}&yearblt1=&cap_garage1=&style=&o_style=4&opens=&accessibility=&o_accessibility=32&page={4}'
+    emailBody = Template("""
+        <a href='https://maps.google.com/?q=${address}, ${city}, UT ${zip}'>${address}, ${city}, UT ${zip}</a>
+        ${stats}
+        <br>
+        ${price} | ${ppsqft} per square foot
+        <br>
+        <a href='http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}'>
+            <img src='${photoUrl}'>
+        </a>
+        <br>
+        http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}
+        <br>
+        This email brought to you by your amazing husband. :)
+        <br>
+        houseHunter.py Auto-generated
+    """)
 
-    def __init__(self, email, password):
+    # constructor params
+    email = None
+    password = None
+    zipCodes = []
+    maxPrice = None
+    minSqFt = None
+    minLotSize = None
+
+    def __init__(self, email, password, zips, maxPrice, minSqFt, minLotSize):
         self.email = email
         self.password = password
-
-        print self.email
-        print self.password
+        self.zipCodes = zips.split(',')
+        self.maxPrice = maxPrice
+        self.minSqFt = minSqFt
+        self.minLotSize = minLotSize
 
     def startSearch(self):
         statusSearches = 0
@@ -28,210 +56,142 @@ class Hunter():
             totalSearches = totalSearches + 1
             statusSearches = statusSearches + 1
             try:
+                print 'search #{}'.format(totalSearches)
                 self.search()
             except:
                 print 'Error with search function!'
             finally:
                 if statusSearches == 4:
                     self.sendEmail('houseHunter.py is still running', 'Let not your heart be troubled. I\'m working hard to find you a home.')
+                    print 'status email sent'
                     statusSearches = 0
                 print 'sleeping for {} minutes...'.format(self.sleepTime/60)
                 time.sleep(self.sleepTime)
 
     def search(self):
-        pass
+        self.currentListings = self.getSavedListings()
+
+        for zip in self.zipCodes:
+            print '\n{}\n'.format(zip)
+
+            # this is required to make their site return the correct data
+            s = requests.Session()
+            s.get(r'http://www.utahrealestate.com/index/public.index')
+
+            page = 1
+            while True:
+                url = self.utahrealestateUrl.format(zip, self.maxPrice, self.minSqFt, self.minLotSize, page)
+                r = s.get(url)
+
+                listings = self.getListingsFromHTML(r.text)
+                if len(listings) == 0:
+                    break
+
+                for l in listings:
+                    if l.mls in self.currentListings.keys():
+                        # check for price change
+                        current = self.currentListings[l.mls]
+                        if not l.price == current.price:
+                            self.sendProperty(l, 'Price change from {} to {}'.format(current.price, l.price))
+                            self.currentListings[l.mls] = l
+                            print 'Price change for: {}'.format(l.mls)
+                    else:
+                        self.sendProperty(l, None)
+                        self.currentListings[l.mls] = l
+                        print 'New property found: {}'.format(l.mls)
+                page = page + 1
+            s.close()
+
+        with open(self.pickleFileName, 'w') as file:
+            pickle.dump(self.currentListings, file)
+
+    def getSavedListings(self):
+        if not os.path.exists(self.pickleFileName):
+            return {}
+        else:
+            with open(self.pickleFileName, 'rb') as file:
+                return pickle.load(file)
+
+    def getListingsFromHTML(self, htmlText):
+        soup = BeautifulSoup(htmlText)
+        listings = []
+        for listTable in soup.findAll('table', {'class': 'public-detail-quickview'}):
+            list = Listing()
+            list.mls = listTable.find('p', {'class': 'public-detail-overview-b'}).contents[2].string.strip()
+            list.price = int(listTable.h2.span.string[1:].replace(',', ''))
+            list.photoUrl = listTable.img['src']
+            if listTable.h2.i:
+                list.address = listTable.h2.i.string.replace('  ', ' ')
+                cityZip = listTable.h2.i.nextSibling.string.split(', ')
+                list.city = cityZip[1]
+                list.zip = cityZip[2].strip()[-5:]
+            else:
+                addressParts = listTable.h2.span.nextSibling.string.strip().split(', ')
+                list.address = addressParts[0].replace('  ', ' ')
+                list.city = addressParts[1]
+                list.zip = addressParts[2][-5:]
+            list.sqft = int(listTable.find('p', {'class': 'public-detail-overview'}).string.strip()[-12:-8])
+            list.ppsqft = list.price / list.sqft
+            list.acres = float(listTable.find('p', {'class': 'public-detail-overview-b'}).contents[-1].strip())
+            list.stats = listTable.find('p', {'class': 'public-detail-overview'}).string.strip()
+
+            listings.append(list)
+
+        return listings
+
+    def sendProperty(self, listing, additionalText=None):
+        if additionalText is None:
+            body = self.emailBody.substitute(listing.__dict__)
+        else:
+            body = '<h3>{}</h3>'.format(additionalText) + self.emailBody.substitute(listing.__dict__)
+
+        subject = '{} | {} | {}, {}'.format(listing.price, listing.sqft, listing.address, listing.city)
+        self.sendEmail(subject, body)
+
+    def sendEmail(self, sub, body):
+        headers = [
+            "from: " + email,
+            "subject: " + sub,
+            "to: " + email,
+            "mime-version: 1.0",
+            "content-type: text/html"
+        ]
+        headers = "\r\n".join(headers)
+
+        server = smtplib.SMTP('smtp.gmail.com:587')
+        server.starttls()
+        server.login(self.email, self.password)
+        server.sendmail(email, email, headers + '\r\n\r\n' + body)
+
+
+class Listing():
+    mls = ''
+    price = 0
+    photoUrl = ''
+    address = ''
+    city = ''
+    zip = ''
+    sqft = 0
+    ppsqft = 0
+    acres = 0.0
+    foundDate = None
+    stats = ''
+
+    def __init__(self):
+        self.foundDate = time.time()
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3:
-        email = sys.argv[1]
-        password = sys.argv[2]
-    else:
-        email = raw_input('gmail account email address: ')
-        password = raw_input('password: ')
+    def getParam(i, prompt):
+        if len(sys.argv) > i and len(sys.argv[i]) > 0:
+            return sys.argv[i]
+        else:
+            return raw_input('{}: '.format(prompt))
 
-    Hunter(email, password)
+    email = getParam(1, 'gmail account email address')
+    password = getParam(2, 'password')
+    zips = getParam(3, 'zip codes, separated by commas (i.e. 84121,84092,84105)')
+    maxPrice = getParam(4, 'max price (i.e. 300000)')
+    minSqFt = getParam(5, 'min square footage (i.e. 2200)')
+    minLotSize = getParam(6, 'min lot size in acres (i.e. .20)')
 
-# i = 0
-# while True:
-#     i = i + 1
-#     print i
-#     try:
-#         search()
-#     except:
-#         print 'ERROR with search function!'
-#         try:
-#             tb = sys.exc_info()[2]
-#             pymsg = traceback.format_tb(tb)[0]
-        
-#             if sys.exc_type:
-#                 pymsg = pymsg + "\n" + str(sys.exc_type) + ": " + str(sys.exc_value)
-        
-#             print pymsg
-#         except:
-#             print 'Problem getting traceback object'
-#     finally:
-#         if i == 4:
-#             sendEmail('houseHunter.py is still running', 'Let not your heart be troubled. I\'m working hard to find you a home.')
-#             i = 0
-#         print 'sleeping for {0} minutes...'.format(sleepTime/60)
-#         time.sleep(sleepTime)
-# zipCodes = [
-#     '84093',
-#     '84121',
-#     '84117',
-#     '84124',
-#     '84106',
-#     '84109',
-#     '84107'
-# ]
-# maxListPrice = '450000'
-# minSqFt = '2000'
-# minLotSize = '.20'
-
-# baseURL = r'http://www.utahrealestate.com/search/public.search?geocoded={0}&htype=zip&state=ut&type=1&listprice2={2}&proptype=1&tot_sqf1={3}&dim_acres1={4}&view=list&page={1}'
-# emailBody = Template("""
-# ${stats}
-# <br>
-# ${acres} acres
-# <br>
-# <a href='https://maps.google.com/?q=${add}'>${add}</a>
-# <br>
-# ${price} | ${ppsqft} per square foot
-# <br>
-# ${photoTag}
-# <br>
-# http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}
-# <br>
-# This email brought to you by your amazing husband. :)
-# <br>
-# houseHunter.py Auto-generated
-# """)
-
-# fileName = 'houses.pkl'
-# onMarket = 'onMarket.pkl'
-# onmarket = None
-# currentListings = []
-# if sys.argv[0]:
-#     email = sys.argv[1]
-# else:
-#     email = raw_input('gmail account email address: ')
-# if sys.argv[1]:
-#     password = sys.argv[2]
-# else:
-#     password = raw_input('password: ')
-
-# no_more = False
-
-# sleepTime = 900
-
-# statusEmailTimes = 4
-
-# session = requests.Session()
-# session.get(baseURL)
-
-
-# def searchPage(txt):
-#     global no_more, onmarket, currentListings
-
-#     soup = BeautifulSoup(txt)
-
-#     listings = soup.findAll('table', {"class": 'public-detail-quickview'})
-#     if len(listings) == 0:
-#         print 'No more properties!!!'
-#         no_more = True
-#     else:
-#         for listing in listings:
-#             props = {}
-#             props['price'] = listing.h2.span.string
-#             props['photoTag'] = "'{0}'".format(listing.img)
-#             props['mls'] = listing.find('p', {'class': 'public-detail-overview-b'}).contents[2].string.strip()
-#             props['add'] = listing.h2.span.nextSibling.string.strip()
-#             zip = props['add'][-5:]
-#             props['stats'] = listing.find('p', {'class': 'public-detail-overview'}).string.strip()
-#             props['sqft'] = props['stats'][-12:-8]
-#             props['ppsqft'] = int(props['price'][1:].replace(',', '')) / int(props['sqft'])
-#             props['acres'] = listing.find('p', {'class': 'public-detail-overview-b'}).contents[-1].strip()
-#             if zip in zipCodes:
-#                 currentListings.append(props['mls'])
-#                 if props['mls'] in onmarket.keys():
-#                     # check for price change...
-#                     if not props['price'] == json.loads(onmarket[props['mls']])['price']:
-#                         sendProperty(props, 'Price changed from {0} to {1}'.format(
-#                             json.loads(onmarket[props['mls']])['price'], props['price']))
-#                         onmarket[props['mls']] = json.dumps(props)
-#                 else:
-#                     sendProperty(props, None)
-#                     props['foundDate'] = time.time()
-#                     onmarket[props['mls']] = json.dumps(props)
-#                     print props['mls']
-
-
-# def sendProperty(props, additionalText):
-#     if additionalText is not None:
-#         body = '<h3>{0}</h3>'.format(additionalText) + emailBody.substitute(props)
-#     else:
-#         body = emailBody.substitute(props)
-
-#     sendEmail('{0} | {1}'.format(props['price'], props['add']), body)
-
-
-# def sendEmail(sub, body):
-#     headers = [
-#         "from: " + email,
-#         "subject: " + sub,
-#         "to: " + email,
-#         "mime-version: 1.0",
-#         "content-type: text/html"
-#     ]
-#     headers = "\r\n".join(headers)
-
-#     server = smtplib.SMTP('smtp.gmail.com:587')
-#     server.starttls()
-#     server.login(email, password)
-#     server.sendmail(email, email, headers + '\r\n\r\n' + body)
-
-
-# def checkForOffTheMarkets():
-#     global currentListings, onmarket
-#     print 'checking for off the markets...'
-#     for mls in onmarket.keys():
-#         if mls not in currentListings:
-#             prop = json.loads(onmarket[mls])
-#             try:
-#                 timeOnMarket = (datetime.datetime.now() - datetime.datetime.fromtimestamp(prop['foundDate'])).days
-#             except:
-#                 timeOnMarket = '???'
-#             sendProperty(prop, 'Listing Off Market in {0} days!!!'.format(timeOnMarket))
-#             del onmarket[mls]
-
-
-# def search():
-#     global no_more, onmarket, onMarket
-#     no_more = False
-#     try:
-#         print 'opening pickle file'
-#         pkl_file = open(onMarket, 'rb')
-#         onmarket = pickle.load(pkl_file)
-#         pkl_file.close()
-#     except:
-#         print 'no pickle file found'
-#         onmarket = {}
-
-#     print 'searching...'
-#     pg = 1
-#     while not no_more:
-#         url = baseURL.format(zip, pg, maxListPrice, minSqFt, minLotSize)
-#         r = session.get(url)
-
-#         searchPage(r.text)
-
-#         pg = pg + 1
-
-#     checkForOffTheMarkets()
-
-#     print 'saving pickle file'
-#     output = open(onMarket, 'wb')
-#     pickle.dump(onmarket, output)
-#     output.close()
-
-
+    Hunter(email, password, zips, maxPrice, minSqFt, minLotSize).startSearch()

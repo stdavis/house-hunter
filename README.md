@@ -11,6 +11,11 @@ You'll want to open up houseHunter.py and edit the list of zip codes that it sea
 
 This script requires that you have [Python 2.*](http://python.org/download/) installed on your computer.
 
+It also requires these third party python libraries:
+- requests
+- BeautifulSoup
+
+
 To run the script, you need to open your command window and browser to the folder that the script is in and run: 
 ```
 houseHunter.py <your gmail address> <your gmail password>
