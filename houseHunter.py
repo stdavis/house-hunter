@@ -6,6 +6,7 @@ from BeautifulSoup import BeautifulSoup
 import sys, os
 import datetime
 import time
+import traceback
 
 
 class Hunter():
@@ -16,15 +17,16 @@ class Hunter():
     utahrealestateUrl = r'http://www.utahrealestate.com/search/public.search?accuracy=5&geocoded={0}&box=%257B%2522north%2522%253A40.71271490000001%252C%2522south%2522%253A40.51886100000001%252C%2522east%2522%253A-111.520936%252C%2522west%2522%253A-111.871398%257D&htype=zip&lat=40.6210656&lng=-111.81713739999998&geolocation=Salt+Lake+City%2C+UT+{0}&type=1&listprice1=&listprice2={1}&proptype=1&state=ut&tot_bed1=&tot_bath1=&tot_sqf1={2}&dim_acres1={3}&yearblt1=&cap_garage1=&style=&o_style=4&opens=&accessibility=&o_accessibility=32&page={4}'
     emailBody = Template("""
         <a href='https://maps.google.com/?q=${address}, ${city}, UT ${zip}'>${address}, ${city}, UT ${zip}</a>
+        <br>
         ${stats}
         <br>
         ${priceStr} | ${ppsqft} per square foot
         <br>
+        ${acres} acres
+        <br>
         <a href='http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}'>
             <img src='${photoUrl}'>
         </a>
-        <br>
-        http://www.utahrealestate.com/report/public.single.report/report/detailed/listno/${mls}/scroll_to/${mls}
         <br>
         This email brought to you by your amazing husband. :)
         <br>
@@ -58,6 +60,17 @@ class Hunter():
                 self.search()
             except:
                 print 'Error with search function!'
+
+                try:
+                    tb = sys.exc_info()[2]
+                    pymsg = traceback.format_tb(tb)[0]
+                
+                    if sys.exc_type:
+                        pymsg = pymsg + "\n" + str(sys.exc_type) + ": " + str(sys.exc_value)
+                
+                    print pymsg
+                except:
+                    print 'Problem getting traceback object'
             finally:
                 if statusSearches == 4:
                     self.sendEmail('houseHunter.py is still running', 'Let not your heart be troubled. I\'m working hard to find you a home.')
@@ -69,7 +82,7 @@ class Hunter():
     def search(self):
         self.currentListings = self.getSavedListings()
         self.listingsFound = []
-
+        
         for zip in self.zipCodes:
             print zip
 
