@@ -28,6 +28,8 @@ class Hunter():
             <img src='${photoUrl}'>
         </a>
         <br>
+        MLS: ${mls}
+        <br>
         This email brought to you by your amazing husband. :)
         <br>
         houseHunter.py Auto-generated
@@ -105,13 +107,13 @@ class Hunter():
                         # check for price change
                         current = self.currentListings[l.mls]
                         if not l.price == current.price:
+                            print 'Price change for: {}'.format(l.mls)
                             self.sendProperty(l, 'Price change from {} to {}'.format(current.price, l.price))
                             self.currentListings[l.mls] = l
-                            print 'Price change for: {}'.format(l.mls)
                     else:
+                        print 'New property found: {}'.format(l.mls)
                         self.sendProperty(l, None)
                         self.currentListings[l.mls] = l
-                        print 'New property found: {}'.format(l.mls)
                 page = page + 1
             s.close()
 
