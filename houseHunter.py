@@ -89,18 +89,18 @@ class Hunter():
                 self.session = requests.Session()
                 self.session.get(r'http://www.utahrealestate.com/index/public.index')
                  
-                print 'searching utah real estate...'
+#                 print 'searching utah real estate...'
                 self.searchSite(self.utahrealestateUrl, zip, self.getUtahRealEstateListingsFromHTML, self.session)
                 self.session.close()
                 
-                print 'searching ksl...'
-                self.session.get(r'http://www.ksl.com/index.php?sid=5017903&nid=651')
-                self.searchSite(self.kslUrl, zip, self.getKSLListingsFromHTML, self.session)
-                self.session.close()
+                # print 'searching ksl...'
+                # self.session.get(r'http://www.ksl.com/index.php?sid=5017903&nid=651')
+                # self.searchSite(self.kslUrl, zip, self.getKSLListingsFromHTML, self.session)
+                # self.session.close()
     
             self.checkForOffTheMarkets()
         except Exception as e:
-            msg = 'Error with search: {}'.format(e)
+            msg = 'Error with search: {}'.format(e.message)
             print msg
             self.sendEmail('Error with houseHunter::search', msg)
         finally:
@@ -110,7 +110,7 @@ class Hunter():
     def searchSite(self, baseUrl, zip, getListings, session):
         page = 1
         while True:
-            print 'page: {}'.format(page)
+            # print 'page: {}'.format(page)
             url = baseUrl.format(zip, self.maxPrice, self.minSqFt, self.minLotSize, page)
             r = session.get(url, headers=self.headers)
 
@@ -141,7 +141,7 @@ class Hunter():
                 return pickle.load(file)
 
     def getUtahRealEstateListingsFromHTML(self, htmlText):
-        print 'parsing utah real estate listings...'
+        # print 'parsing utah real estate listings...'
         soup = BeautifulSoup(htmlText)
         listings = []
         for listTable in soup.findAll('table', {'class': 'public-detail-quickview'}):
@@ -171,7 +171,7 @@ class Hunter():
         return listings
     
     def getKSLListingsFromHTML(self, htmlText):
-        print 'parsing ksl listings...'
+#         print 'parsing ksl listings...'
         soup = BeautifulSoup(htmlText)
         listings = []
 #         s = requests.Session()
@@ -201,9 +201,9 @@ class Hunter():
 
     def sendProperty(self, listing, additionalText=None):
         if additionalText is None:
-            body = self.emailBody.substitute(listing.__dict__)
+            body = self.emailBody.safe_substitute(listing.__dict__)
         else:
-            body = '<h3>{}</h3>'.format(additionalText) + self.emailBody.substitute(listing.__dict__)
+            body = '<h3>{}</h3>'.format(additionalText) + self.emailBody.safe_substitute(listing.__dict__)
 
         subject = '{} | {} sf | {}, {} {}'.format(listing.priceStr, listing.sqft, listing.address, listing.city, listing.zip)
         self.sendEmail(subject, body)
